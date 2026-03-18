@@ -1,0 +1,58 @@
+.hero {
+  padding: 24rpx;
+  margin-bottom: 18rpx;
+}
+
+.best {
+  margin: 14rpx 0 18rpx;
+  font-size: 28rpx;
+}
+
+.score {
+  color: #14532d;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 22rpx 0;
+  color: #6b7280;
+  font-size: 28rpx;
+}
+
+.tab.active {
+  color: #1f2937;
+  font-weight: 600;
+  background: #ecfdf3;
+}
+
+.list-card {
+  padding: 14rpx;
+}
+
+.rank-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  align-items: center;
+  padding: 14rpx 10rpx;
+  border-bottom: 1rpx solid #edf2f7;
+  font-size: 25rpx;
+}
+
+.rank-row.header {
+  font-size: 24rpx;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.rank-row.self {
+  background: #ecfdf3;
+  border-radius: 12rpx;
+}

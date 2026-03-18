@@ -1,0 +1,93 @@
+.hero {
+  padding: 28rpx;
+  margin-bottom: 22rpx;
+  background: linear-gradient(140deg, #fdf3df 0%, #ffffff 100%);
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #2f4f4f;
+}
+
+.subtitle {
+  margin-top: 10rpx;
+  color: #5b6471;
+  font-size: 26rpx;
+}
+
+.stats {
+  margin-top: 26rpx;
+  display: flex;
+  gap: 16rpx;
+}
+
+.stat-item {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 18rpx;
+  padding: 18rpx 14rpx;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 22rpx;
+  color: #6b7280;
+}
+
+.stat-value {
+  margin-top: 8rpx;
+  font-size: 30rpx;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.mode-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+  margin-bottom: 22rpx;
+}
+
+.mode-card {
+  padding: 22rpx 20rpx;
+  min-height: 154rpx;
+}
+
+.mode-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #224e3e;
+}
+
+.mode-desc {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #5f6b79;
+  line-height: 1.4;
+}
+
+.daily,
+.difficulty {
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.daily-flag {
+  font-size: 24rpx;
+  color: #8b5a1f;
+  background: #fff2d8;
+  border-radius: 999rpx;
+  padding: 6rpx 16rpx;
+}
+
+.daily-flag.done {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.chip-list {
+  margin-top: 12rpx;
+  display: flex;
+  flex-wrap: wrap;
+}

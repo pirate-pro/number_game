@@ -1,0 +1,116 @@
+.tabs {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 28rpx;
+  color: #6b7280;
+  background: #ffffff;
+}
+
+.tab.active {
+  color: #1f2937;
+  font-weight: 600;
+  background: #f2fdf4;
+}
+
+.panel {
+  padding: 24rpx;
+  margin-bottom: 18rpx;
+}
+
+.difficulty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.difficulty-item {
+  background: #f8fafc;
+  border: 2rpx solid #e5e7eb;
+  border-radius: 16rpx;
+  padding: 16rpx;
+}
+
+.difficulty-item.selected {
+  border-color: #86c6a0;
+  background: #eefbf2;
+}
+
+.difficulty-item.locked {
+  opacity: 0.6;
+}
+
+.difficulty-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.difficulty-desc {
+  margin-top: 6rpx;
+  color: #6b7280;
+  font-size: 24rpx;
+}
+
+.difficulty-lock {
+  margin-top: 8rpx;
+  color: #9a3412;
+  font-size: 22rpx;
+}
+
+.rule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 0;
+  font-size: 27rpx;
+}
+
+.daily-note {
+  margin-top: 10rpx;
+  color: #9a3412;
+  font-size: 26rpx;
+}
+
+.daily-note.done {
+  color: #166534;
+}
+
+.levels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10rpx;
+  margin-top: 8rpx;
+}
+
+.level {
+  text-align: center;
+  padding: 14rpx 0;
+  border-radius: 12rpx;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.level.cleared {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.level.active {
+  border: 2rpx solid #2e8b57;
+}
+
+.level.locked {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.start-btn {
+  margin-top: 14rpx;
+}

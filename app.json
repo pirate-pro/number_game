@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/gate/gate",
+    "pages/game/game",
+    "pages/battle/battle",
+    "pages/rank/rank",
+    "pages/result/result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f8f5ee",
+    "navigationBarTitleText": "数忆数",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f4f6fb"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

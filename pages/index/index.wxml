@@ -1,0 +1,63 @@
+<view class="page">
+  <view class="hero card">
+    <view class="title">数忆数</view>
+    <view class="subtitle">记忆 + 心算，碎片时间也能练脑力</view>
+    <view class="stats">
+      <view class="stat-item">
+        <view class="stat-label">积分</view>
+        <view class="stat-value">{{profile.points || 0}}</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-label">称号</view>
+        <view class="stat-value">{{currentTitleName}}</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-label">极速纪录</view>
+        <view class="stat-value">{{profile.bestSpeedScore || 0}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="mode-list">
+    <view class="mode-card card" bindtap="toGate">
+      <view class="mode-name">限时闯关</view>
+      <view class="mode-desc">每日闯关 + 关卡闯关，通关解锁道具</view>
+    </view>
+    <view class="mode-card card" bindtap="toBattle">
+      <view class="mode-name">好友对战</view>
+      <view class="mode-desc">同题同步作答，先全对完成者获胜</view>
+    </view>
+    <view class="mode-card card" bindtap="toSpeed">
+      <view class="mode-name">极速冲榜</view>
+      <view class="mode-desc">固定 6 题进阶算式，越快分数越高</view>
+    </view>
+    <view class="mode-card card" bindtap="toRank">
+      <view class="mode-name">排行榜</view>
+      <view class="mode-desc">查看全网 / 好友极速成绩</view>
+    </view>
+  </view>
+
+  <view class="daily card">
+    <view class="row-between">
+      <view class="section-title">每日闯关</view>
+      <view class="daily-flag {{dailyStatus.rewardClaimed ? 'done' : ''}}">
+        {{dailyStatus.rewardClaimed ? '奖励已领取' : '奖励待领取'}}
+      </view>
+    </view>
+    <view class="muted">{{dailyStatus.date}}</view>
+    <view class="muted">每日全对可获得额外积分奖励，随开随玩。</view>
+  </view>
+
+  <view class="difficulty card">
+    <view class="section-title">难度解锁</view>
+    <view class="chip-list">
+      <view
+        class="chip {{!item.unlocked ? 'chip-lock' : ''}}"
+        wx:for="{{difficultyCards}}"
+        wx:key="key"
+      >
+        {{item.name}} · {{item.unlocked ? '已解锁' : '未解锁'}}
+      </view>
+    </view>
+  </view>
+</view>

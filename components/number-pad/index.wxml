@@ -1,0 +1,23 @@
+<view class="pad">
+  <view class="pad-row">
+    <button class="pad-btn" data-value="1" bindtap="emitInput">1</button>
+    <button class="pad-btn" data-value="2" bindtap="emitInput">2</button>
+    <button class="pad-btn" data-value="3" bindtap="emitInput">3</button>
+  </view>
+  <view class="pad-row">
+    <button class="pad-btn" data-value="4" bindtap="emitInput">4</button>
+    <button class="pad-btn" data-value="5" bindtap="emitInput">5</button>
+    <button class="pad-btn" data-value="6" bindtap="emitInput">6</button>
+  </view>
+  <view class="pad-row">
+    <button class="pad-btn" data-value="7" bindtap="emitInput">7</button>
+    <button class="pad-btn" data-value="8" bindtap="emitInput">8</button>
+    <button class="pad-btn" data-value="9" bindtap="emitInput">9</button>
+  </view>
+  <view class="pad-row">
+    <button class="pad-btn" bindtap="emitClear">清空</button>
+    <button class="pad-btn" data-value="0" bindtap="emitInput">0</button>
+    <button class="pad-btn" bindtap="emitDelete">删除</button>
+  </view>
+  <button class="submit-btn" bindtap="emitSubmit">{{confirmText}}</button>
+</view>

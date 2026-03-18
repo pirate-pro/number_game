@@ -1,0 +1,58 @@
+<view class="page" wx:if="{{result}}">
+  <view class="card summary">
+    <view class="title">{{result.isClear ? '挑战成功' : '挑战结束'}}</view>
+    <view class="subtitle">{{result.modeName}} · {{result.difficultyName}}</view>
+    <view class="metrics">
+      <view class="metric">
+        <view class="metric-label">正确率</view>
+        <view class="metric-value">{{result.accuracy}}%</view>
+      </view>
+      <view class="metric">
+        <view class="metric-label">答对题数</view>
+        <view class="metric-value">{{result.correctCount}}/{{result.totalCount}}</view>
+      </view>
+      <view class="metric">
+        <view class="metric-label">用时</view>
+        <view class="metric-value">{{elapsedLabel}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card rewards">
+    <view class="section-title">奖励结算</view>
+    <view class="row">
+      <text class="muted">本局积分</text>
+      <text>+{{result.points}}</text>
+    </view>
+    <view class="row" wx:if="{{result.dailyBonus > 0}}">
+      <text class="muted">每日奖励</text>
+      <text>+{{result.dailyBonus}}</text>
+    </view>
+    <view class="row" wx:if="{{result.mode === 'speed'}}">
+      <text class="muted">极速分</text>
+      <text>{{result.speedScore}}</text>
+    </view>
+    <view class="row">
+      <text class="muted">复活道具</text>
+      <text>{{result.usedRevive ? '已使用' : '未使用'}}</text>
+    </view>
+    <view class="row">
+      <text class="muted">加时道具</text>
+      <text>{{result.usedExtraTime ? '已使用' : '未使用'}}</text>
+    </view>
+    <view class="new-title" wx:if="{{newTitleName}}">解锁新称号：{{newTitleName}}</view>
+  </view>
+
+  <view class="actions">
+    <button class="primary-btn" bindtap="playAgain">再来一局</button>
+    <button class="ghost-btn" bindtap="toHome">返回首页</button>
+    <button class="ghost-btn" wx:if="{{result.mode === 'speed'}}" bindtap="toRank">查看榜单</button>
+  </view>
+</view>
+
+<view class="page" wx:else>
+  <view class="card empty">
+    <view class="section-title">暂无结算数据</view>
+    <button class="primary-btn" bindtap="toHome">回到首页</button>
+  </view>
+</view>

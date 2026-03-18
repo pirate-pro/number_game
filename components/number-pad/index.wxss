@@ -1,0 +1,31 @@
+.pad {
+  margin-top: 20rpx;
+}
+
+.pad-row {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 12rpx;
+}
+
+.pad-btn {
+  flex: 1;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 18rpx;
+  border: 2rpx solid #dbe4ea;
+  font-size: 34rpx;
+  line-height: 1;
+  padding: 24rpx 0;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #2e8b57;
+  color: #ffffff;
+  border-radius: 18rpx;
+  border: none;
+  font-size: 30rpx;
+  line-height: 1;
+  padding: 22rpx 0;
+}

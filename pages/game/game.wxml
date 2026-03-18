@@ -1,0 +1,73 @@
+<view class="page">
+  <view class="card header">
+    <view class="mode-name">{{modeName}}</view>
+    <view class="meta">{{difficultyName}}{{mode === 'gate' ? (' · 第 ' + level + ' 关') : ''}}</view>
+  </view>
+
+  <view class="card stage" wx:if="{{phase === 'ready'}}">
+    <view class="section-title">本局信息</view>
+    <view class="row">
+      <text class="muted">题目数量</text>
+      <text>{{questionCount}} 题</text>
+    </view>
+    <view class="row">
+      <text class="muted">记忆阶段</text>
+      <text>{{memoryTime}} 秒</text>
+    </view>
+    <view class="row">
+      <text class="muted">作答阶段</text>
+      <text>{{answerTime}} 秒</text>
+    </view>
+    <view class="tool-row">
+      <view class="chip {{toolRevive ? '' : 'chip-lock'}}">
+        {{toolRevive ? (usedRevive ? '复活已使用' : '复活可用') : '复活未解锁'}}
+      </view>
+      <view class="chip {{toolExtraTime ? '' : 'chip-lock'}}">
+        {{toolExtraTime ? (usedExtraTime ? '加时已使用' : '加时可用') : '加时未解锁'}}
+      </view>
+    </view>
+    <button class="primary-btn" bindtap="startRound">开始记忆</button>
+  </view>
+
+  <view class="card stage" wx:if="{{phase === 'memory'}}">
+    <view class="countdown">{{memoryLeft}}s</view>
+    <view class="muted">请记住以下算式，稍后将依次作答。</view>
+    <view class="memory-list">
+      <view class="memory-item" wx:for="{{questions}}" wx:key="id">{{item.expression}}</view>
+    </view>
+  </view>
+
+  <view class="card stage" wx:if="{{phase === 'answer'}}">
+    <view class="row-between">
+      <view class="timer">剩余 {{answerLeft}}s</view>
+      <view class="progress">{{currentIndex + 1}} / {{questionCount}}</view>
+    </view>
+    <view class="expression">{{currentExpression}}</view>
+    <view class="answer-box">{{inputValue || '请输入答案'}}</view>
+    <view class="tips muted">{{tips}}</view>
+    <view class="tool-row">
+      <button
+        class="ghost-btn tool-btn"
+        bindtap="onUseExtraTime"
+        disabled="{{!toolExtraTime || usedExtraTime}}"
+      >
+        +2 秒加时
+      </button>
+      <view class="muted">
+        {{toolRevive ? (usedRevive ? '复活已使用' : '复活可用') : '复活未解锁'}}
+      </view>
+    </view>
+    <number-pad
+      bind:input="onPadInput"
+      bind:delete="onPadDelete"
+      bind:clear="onPadClear"
+      bind:submit="onPadSubmit"
+      confirm-text="确认提交"
+    />
+  </view>
+
+  <view class="card stage center" wx:if="{{phase === 'finished'}}">
+    <view class="section-title">结算中</view>
+    <view class="muted">{{tips}}</view>
+  </view>
+</view>

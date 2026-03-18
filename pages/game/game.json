@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "开始挑战",
+  "usingComponents": {
+    "number-pad": "/components/number-pad/index"
+  }
+}

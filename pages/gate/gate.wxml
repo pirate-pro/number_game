@@ -1,0 +1,81 @@
+<view class="page">
+  <view class="tabs card">
+    <view class="tab {{tab === 'daily' ? 'active' : ''}}" data-tab="daily" bindtap="switchTab">
+      每日闯关
+    </view>
+    <view class="tab {{tab === 'gate' ? 'active' : ''}}" data-tab="gate" bindtap="switchTab">
+      关卡闯关
+    </view>
+  </view>
+
+  <view class="card panel">
+    <view class="section-title">选择难度</view>
+    <view class="difficulty-list">
+      <view
+        class="difficulty-item {{selectedDifficulty === item.key ? 'selected' : ''}} {{!item.unlocked ? 'locked' : ''}}"
+        wx:for="{{difficultyList}}"
+        wx:key="key"
+        data-key="{{item.key}}"
+        bindtap="selectDifficulty"
+      >
+        <view class="difficulty-name">{{item.name}}</view>
+        <view class="difficulty-desc">{{item.desc}}</view>
+        <view class="difficulty-lock" wx:if="{{!item.unlocked}}">{{item.lockReason}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card panel">
+    <view class="section-title">本局规则</view>
+    <view class="rule-row">
+      <text class="muted">记忆时间</text>
+      <text>{{difficultyConfig.memoryTime}} 秒</text>
+    </view>
+    <view class="rule-row">
+      <text class="muted">作答时间</text>
+      <text>{{difficultyConfig.answerTime}} 秒</text>
+    </view>
+    <view class="rule-row">
+      <text class="muted">题型</text>
+      <text>{{difficultyConfig.description}}</text>
+    </view>
+  </view>
+
+  <view class="card panel" wx:if="{{tab === 'daily'}}">
+    <view class="section-title">今日状态</view>
+    <view class="muted">{{dailyStatus.date}}</view>
+    <view class="daily-note {{dailyStatus.rewardClaimed ? 'done' : ''}}">
+      {{dailyStatus.rewardClaimed ? '今日额外积分已领取' : '今日全对可领取额外积分'}}
+    </view>
+  </view>
+
+  <view class="card panel" wx:if="{{tab === 'gate'}}">
+    <view class="section-title">关卡选择（1-7）</view>
+    <view class="levels">
+      <view
+        class="level {{item.cleared ? 'cleared' : ''}} {{selectedLevel === item.level ? 'active' : ''}} {{item.locked ? 'locked' : ''}}"
+        wx:for="{{levelItems}}"
+        wx:key="level"
+        data-level="{{item.level}}"
+        bindtap="selectLevel"
+      >
+        {{item.level}}
+      </view>
+    </view>
+  </view>
+
+  <view class="card panel">
+    <view class="section-title">道具福利</view>
+    <view class="muted">累计通关关卡：{{tools.totalCleared}}</view>
+    <view class="chip {{tools.revive ? '' : 'chip-lock'}}">
+      {{tools.revive ? '复活道具可用（单局 1 次）' : '通关 5 关后解锁复活道具'}}
+    </view>
+    <view class="chip {{tools.extraTime ? '' : 'chip-lock'}}">
+      {{tools.extraTime ? '加时道具可用（+2 秒）' : '通关 5 关后解锁加时道具'}}
+    </view>
+  </view>
+
+  <button class="primary-btn start-btn" bindtap="startGame">
+    {{tab === 'daily' ? '开始每日闯关' : ('开始第 ' + selectedLevel + ' 关')}}
+  </button>
+</view>

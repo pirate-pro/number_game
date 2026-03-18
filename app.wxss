@@ -1,0 +1,71 @@
+page {
+  background: linear-gradient(180deg, #f4f6fb 0%, #eef7ef 100%);
+  color: #1f2937;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.page {
+  padding: 28rpx 24rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 12rpx 30rpx rgba(31, 41, 55, 0.08);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #3b8d5f 0%, #4ba876 100%);
+  color: #ffffff;
+  border-radius: 999rpx;
+  font-size: 30rpx;
+  line-height: 1;
+  padding: 22rpx 32rpx;
+  border: none;
+}
+
+.ghost-btn {
+  background: #ffffff;
+  color: #2f5f46;
+  border-radius: 999rpx;
+  font-size: 28rpx;
+  line-height: 1;
+  padding: 20rpx 30rpx;
+  border: 2rpx solid #9bd5b0;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120rpx;
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: #edf8f0;
+  color: #22543d;
+  font-size: 24rpx;
+  margin-right: 12rpx;
+  margin-bottom: 12rpx;
+}
+
+.chip-lock {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

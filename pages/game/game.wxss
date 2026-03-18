@@ -1,0 +1,110 @@
+.header {
+  padding: 24rpx;
+  margin-bottom: 18rpx;
+  background: linear-gradient(135deg, #ecfdf3 0%, #ffffff 100%);
+}
+
+.mode-name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.meta {
+  margin-top: 8rpx;
+  color: #6b7280;
+  font-size: 26rpx;
+}
+
+.stage {
+  padding: 24rpx;
+  margin-bottom: 18rpx;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+}
+
+.tool-row {
+  margin: 16rpx 0 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.countdown {
+  font-size: 64rpx;
+  font-weight: 700;
+  text-align: center;
+  color: #14532d;
+  margin-bottom: 12rpx;
+}
+
+.memory-list {
+  margin-top: 18rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12rpx;
+}
+
+.memory-item {
+  background: #f8fafc;
+  border-radius: 16rpx;
+  padding: 20rpx 14rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.timer {
+  color: #b45309;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.progress {
+  color: #374151;
+  font-size: 26rpx;
+}
+
+.expression {
+  margin-top: 26rpx;
+  text-align: center;
+  font-size: 70rpx;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.answer-box {
+  margin-top: 20rpx;
+  background: #f9fafb;
+  border-radius: 16rpx;
+  border: 2rpx dashed #cbd5e1;
+  padding: 24rpx 16rpx;
+  text-align: center;
+  font-size: 46rpx;
+  color: #0f172a;
+  min-height: 72rpx;
+  box-sizing: border-box;
+}
+
+.tips {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+
+.tool-btn {
+  padding: 14rpx 22rpx;
+}
+
+.center {
+  text-align: center;
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+}
